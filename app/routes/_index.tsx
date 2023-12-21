@@ -1,11 +1,10 @@
-import type { MetaFunction } from "@remix-run/node";
+import { json, type LoaderFunctionArgs } from "@remix-run/node";
+import { getCount } from "~/utils/db.server";
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
-};
+export async function loader({ request }: LoaderFunctionArgs) {
+  const count = await getCount();
+  return json({ count });
+}
 
 export default function Index() {
   return (
