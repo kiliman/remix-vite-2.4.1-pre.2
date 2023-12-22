@@ -8,9 +8,9 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
+    <div className="p-8">
+      <h1 className="text-2xl font-bold">Welcome to Remix!!!</h1>
+      <ul className="mt-2">
         <li>
           <a
             target="_blank"
